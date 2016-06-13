@@ -1,0 +1,145 @@
+= Product Bundle Recommender REST API Documentation
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+
+[introduction]
+== Introduction
+
+Product Bundle Recommender is a RESTful web service for recommending a bundle of products for to prospective customers.
+
+[introduction-http-verbs]
+=== HTTP Verbs
+
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to create a new resource or submit an update
+|===
+
+[introduction-http-status-codes]
+=== HTTP Status Codes
+
+|===
+| Status code | Usage
+
+| `200 OK`
+| The request completed successfully.
+
+| `201 Created`
+| A new resource has been created successfully.
+
+| `400 Bad Request`
+| The request was malformed. The response body will include an error providing further information.
+
+| `404 Not Found`
+| The requested resource did not exist.
+|===
+
+[introduction-errors]
+=== Errors
+
+Whenever an error response (status code >= 400) is returned, the body will contain a JSON object
+that describes the problem. The error object has the following structure:
+
+include::{snippets}/validation-error-example/response-fields.adoc[]
+
+For example, a request that attempts to post an invalid answer will produce a `400 Bad Request` response:
+
+include::{snippets}/validation-error-example/http-response.adoc[]
+
+
+[rest-api-docs]
+== REST API Documentation
+
+
+
+[rest-api-docs-get-questions]
+=== Get Questions
+
+To get all questions, you need to execute a `GET` request.
+
+==== Request Examples
+
+Make a request using cURL:
+
+include::{snippets}/get-questions/curl-request.adoc[]
+
+HTTP requests:
+
+include::{snippets}/get-questions/http-request.adoc[]
+
+==== Response Structure
+The response from this request should have a status code of `200 OK`.
+
+include::{snippets}/get-questions/response-fields.adoc[]
+
+==== Response Example
+include::{snippets}/get-questions/http-response.adoc[]
+
+
+
+
+[rest-api-docs-post-answer]
+=== Post Answer
+
+To post answer and get a recommended bundle, you need to execute a `POST` request. 
+
+==== Request Structure
+
+include::{snippets}/post-answer/request-fields.adoc[]
+
+==== Request Examples
+
+Make a request using cURL:
+
+include::{snippets}/post-answer/curl-request.adoc[]
+
+HTTP requests:
+
+include::{snippets}/post-answer/http-request.adoc[]
+
+==== Response Structure
+The response from this request should have a status code of `201 Created`.
+
+include::{snippets}/post-answer/response-fields.adoc[]
+
+==== Response Example
+include::{snippets}/post-answer/http-response.adoc[]
+
+
+
+[rest-api-docs-post-validate]
+=== Post Validate Bundle
+
+To validate a customised bundle, you need to execute a `POST` request.
+
+==== Request Structure
+
+include::{snippets}/post-validate/request-fields.adoc[]
+
+==== Request Examples
+
+Make a request using cURL:
+
+include::{snippets}/post-validate/curl-request.adoc[]
+
+HTTP requests:
+
+include::{snippets}/post-validate/http-request.adoc[]
+
+==== Response Structure
+The response from this request should have a status code of `200 OK`.
+
+include::{snippets}/post-validate/response-fields.adoc[]
+
+==== Response Example
+include::{snippets}/post-validate/http-response.adoc[]
