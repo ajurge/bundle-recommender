@@ -6,17 +6,13 @@ The service was built using Java and Spring Boot. API documentation was generate
 ### Instructions
 Project should be built and run using Java 1.8.
 
-1. Run tests using 
-```mvn clean test```
+1. Run tests using ```mvn clean test```
 
-2. Build with Maven
-```mvn clean install``` 
+2. Build with Maven ```mvn clean install``` 
 
-3. Change directory to
-```../bundle-recommender/target/``` 
+3. Change directory to ```../bundle-recommender/target/``` 
  
-4. Execute in the terminal
-```java -jar bundle-recommender-1.0.0-SNAPSHOT.jar ``` 
+4. Execute in the terminal ```java -jar bundle-recommender-1.0.0-SNAPSHOT.jar ``` 
 
 Once the service is up and running the documentation of the REST API can be accessed at:
 
